@@ -1,0 +1,12 @@
+c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\bin\Debug\Woodworks.exe.config
+c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\bin\Debug\Woodworks.exe
+c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\bin\Debug\Woodworks.pdb
+c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\bin\Debug\Newtonsoft.Json.dll
+c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\bin\Debug\RestSharp.dll
+c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\bin\Debug\Newtonsoft.Json.xml
+c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\bin\Debug\RestSharp.xml
+c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.csprojResolveAssemblyReference.cache
+c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.Properties.Resources.resources
+c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.csproj.GenerateResource.Cache
+c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.exe
+c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.pdb
