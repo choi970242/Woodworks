@@ -9,13 +9,16 @@ namespace Woodworks.Models
     class WoodWorksRequest<T>
     {
         private string Method;
+        private string User_key;
         private T Param;
 
-        public WoodWorksRequest(string method, T param)
+        public WoodWorksRequest(string method, string user_key, T param)
         {
             this.method = method;
+            this.user_key = user_key;
             this.param = param;
         }
+
         public string method
         {
             get
@@ -26,6 +29,19 @@ namespace Woodworks.Models
             set
             {
                 Method = value;
+            }
+        }
+
+        public string user_key
+        {
+            get
+            {
+                return User_key;
+            }
+
+            set
+            {
+                User_key = value;
             }
         }
 
@@ -45,6 +61,11 @@ namespace Woodworks.Models
         public bool ShouldSerializemethod()
         {
             return (method != null);
+        }
+
+        public bool ShouldSerializeuser_key()
+        {
+            return (user_key != null);
         }
 
         public bool ShouldSerializeparam()

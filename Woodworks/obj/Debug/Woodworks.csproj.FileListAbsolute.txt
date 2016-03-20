@@ -10,3 +10,14 @@ c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\obj\Debug\
 c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.csproj.GenerateResource.Cache
 c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.exe
 c:\users\al\documents\visual studio 2015\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.pdb
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\bin\Debug\Woodworks.exe.config
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.exe
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.pdb
+C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.csprojResolveAssemblyReference.cache
+C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.Properties.Resources.resources
+C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.Start.resources
+C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.csproj.GenerateResource.Cache
+C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\bin\Debug\Woodworks.exe
+C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\bin\Debug\Woodworks.pdb
+C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\bin\Debug\Newtonsoft.Json.xml

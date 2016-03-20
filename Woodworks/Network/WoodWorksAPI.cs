@@ -12,13 +12,13 @@ namespace Woodworks.Network
 {
     class WoodWorksAPI
     {
-        private static string url = "http://192.168.1.141/~aldrichchoi/rpc/";
+        private static string url = "http://api.local/rpc/";
 
-        public async static Task<string> runRequest<T>(string method, T param)
+        public async static Task<string> runRequest<T>(string method, string user_key, T param)
         {
             HttpClient client = new HttpClient();
             try {
-                string request = formatRequest<T>(method, param);
+                string request = formatRequest<T>(method, user_key, param);
                 Console.WriteLine(request);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = await client.PostAsync(url, new StringContent(request, Encoding.UTF8, "application/json"));
@@ -48,9 +48,9 @@ namespace Woodworks.Network
             return null;
         }
        
-        public static string formatRequest<T>(string method, T param)
+        public static string formatRequest<T>(string method, string user_key, T param)
         {
-            WoodWorksRequest<T> request = new WoodWorksRequest<T>(method,param);
+            WoodWorksRequest<T> request = new WoodWorksRequest<T>(method, user_key, param);
             return JsonConvert.SerializeObject(request, Formatting.Indented);
         }
 
@@ -58,5 +58,6 @@ namespace Woodworks.Network
         {
             return JsonConvert.SerializeObject(param);
         }
+
     }
 }

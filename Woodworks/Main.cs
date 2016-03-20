@@ -7,25 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Woodworks.Models;
-using Woodworks.Network;
 
 namespace Woodworks
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
-            //Console.WriteLine(Wood.getWoods());
-            test();
+            Test2();
         }
 
-        public void test()
+        public void Test2()
         {
-            Wood.addWoods();
+
         }
-
-
     }
 }
