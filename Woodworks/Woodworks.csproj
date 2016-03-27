@@ -51,6 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerView.Designer.cs">
+      <DependentUpon>CustomerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Inventory.Designer.cs">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +70,8 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Config.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\UOM.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Wood.cs" />
     <Compile Include="Network\Models\WoodWorksRequest.cs" />
@@ -70,6 +84,27 @@
     <Compile Include="Start.Designer.cs">
       <DependentUpon>Start.cs</DependentUpon>
     </Compile>
+    <Compile Include="UomView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UomView.Designer.cs">
+      <DependentUpon>UomView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WoodView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WoodView.Designer.cs">
+      <DependentUpon>WoodView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomerView.resx">
+      <DependentUpon>CustomerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory.resx">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -81,6 +116,12 @@
     </Compile>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UomView.resx">
+      <DependentUpon>UomView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WoodView.resx">
+      <DependentUpon>WoodView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

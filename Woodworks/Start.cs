@@ -17,14 +17,6 @@ namespace Woodworks
         public Start()
         {
             InitializeComponent();
-            //Console.WriteLine(Wood.getWoods());
-            //test();
-        }
-
-        public void test()
-        {
-            Wood.getWoods();
-            //User.login;
         }
 
         private async void loginBtn_Click(object sender, EventArgs e)
@@ -35,8 +27,10 @@ namespace Woodworks
             if (test)
             {
                 Console.WriteLine(Config.user.user_key);
-                this.test();
-                MessageBox.Show("Success","Hello",MessageBoxButtons.OK,MessageBoxIcon.None);
+                Main main = new Main();
+                main.FormClosed += new FormClosedEventHandler(FormsClosed);
+                main.Show();
+                this.Hide();
             }
             else
             {
@@ -46,6 +40,12 @@ namespace Woodworks
             //Console.WriteLine(Config.user.user_key);
         }
 
+        private void FormsClosed(object sender, FormClosedEventArgs e)
+        {
+            usrTextbx.Text = "";
+            pswdTextbx.Text = "";
+            this.Show();
+        }
 
     }
 }

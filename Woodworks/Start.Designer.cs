@@ -47,6 +47,7 @@
             // 
             this.pswdTextbx.Location = new System.Drawing.Point(124, 135);
             this.pswdTextbx.Name = "pswdTextbx";
+            this.pswdTextbx.PasswordChar = '*';
             this.pswdTextbx.Size = new System.Drawing.Size(213, 20);
             this.pswdTextbx.TabIndex = 1;
             // 
@@ -99,7 +100,8 @@
             this.Controls.Add(this.pswdTextbx);
             this.Controls.Add(this.usrTextbx);
             this.Name = "Start";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Woodworks";
             this.ResumeLayout(false);
             this.PerformLayout();
 

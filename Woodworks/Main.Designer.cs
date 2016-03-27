@@ -28,11 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.mainTabCntrl = new System.Windows.Forms.TabControl();
+            this.SuspendLayout();
+            // 
+            // mainTabCntrl
+            // 
+            this.mainTabCntrl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainTabCntrl.Location = new System.Drawing.Point(4, 3);
+            this.mainTabCntrl.Name = "mainTabCntrl";
+            this.mainTabCntrl.SelectedIndex = 0;
+            this.mainTabCntrl.Size = new System.Drawing.Size(999, 592);
+            this.mainTabCntrl.TabIndex = 0;
+            // 
+            // Main
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1006, 598);
+            this.Controls.Add(this.mainTabCntrl);
+            this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TabControl mainTabCntrl;
     }
 }

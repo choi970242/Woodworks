@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,14 +9,15 @@ using Woodworks.Network;
 
 namespace Woodworks.Models
 {
-    class Wood
+    public class Wood
     {
         private long Wood_id;
-        private string Wood_type;
-        private float Wood_length;
-        private float Wood_width;
-        private float Wood_height;
-        private float Wood_price;
+        private String Wood_type;
+        private double Wood_length;
+        private double Wood_width;
+        private double Wood_height;
+        private String Wood_uom;
+        private double Wood_price;
         private int Wood_qty;
 
         public long wood_id
@@ -43,7 +46,7 @@ namespace Woodworks.Models
             }
         }
 
-        public float wood_length
+        public double wood_length
         {
             get
             {
@@ -56,7 +59,7 @@ namespace Woodworks.Models
             }
         }
 
-        public float wood_width
+        public double wood_width
         {
             get
             {
@@ -69,7 +72,7 @@ namespace Woodworks.Models
             }
         }
 
-        public float wood_height
+        public double wood_height
         {
             get
             {
@@ -82,7 +85,20 @@ namespace Woodworks.Models
             }
         }
 
-        public float wood_price
+        public String wood_uom
+        {
+            get
+            {
+                return Wood_uom;
+            }
+
+            set
+            {
+                Wood_uom = value;
+            }
+        }
+
+        public double wood_price
         {
             get
             {
@@ -133,6 +149,11 @@ namespace Woodworks.Models
             return (wood_height != 0.0);
         }
 
+        public bool ShouldSerializewood_uom()
+        {
+            return (wood_uom != null);
+        }
+
         public bool ShouldSerializewood_price()
         {
             return (wood_price != 0.0);
@@ -143,58 +164,69 @@ namespace Woodworks.Models
             return (wood_qty != 0);
         }
 
-        public async static void getWoods()
+        public async static Task<List<Wood>> getWoods()
         {
-            Wood wood = new Wood();
-            wood.wood_type = "corn";
-            wood.wood_length = 10;
-            wood.wood_width = 5.5f;
-            wood.Wood_height = 20.1f;
-            wood.wood_price = 500;
             string result = await WoodWorksAPI.runRequest<Wood>("getWood", Config.user.user_key,null);
             Console.WriteLine(result);
+            JObject getresult = JObject.Parse(result);
+            if (getresult["error"] == null)
+            {
+                List<Wood> woods = JsonConvert.DeserializeObject<List<Wood>>(getresult["result"].ToString());
+                return woods;
+            }
+            //string param = WoodWorksAPI.formatRequest<Wood>("getWood",null);
+            return null;
+        }
+
+        public async static Task<Boolean> addWoods<T>(T wood)
+        {
+            string result = await WoodWorksAPI.runRequest<T>("addWood", Config.user.user_key, wood);
+            Console.WriteLine(result);
+            JObject getresult = JObject.Parse(result);
+            if (getresult["error"] == null)
+            {
+                //List<Wood> woods = JsonConvert.DeserializeObject<List<Wood>>(getresult["result"].ToString());
+                return true;
+            }
+            //string param = WoodWorksAPI.formatRequest<Wood>("getWood",null);
+            return false;
+        }
+
+        public async static Task<Boolean> editWoods(Wood wood)
+        {
+            string result = await WoodWorksAPI.runRequest<Wood>("editWood", Config.user.user_key, wood);
+            Console.WriteLine(result);
+            JObject editresult = JObject.Parse(result);
+            if (editresult["error"] == null)
+            {
+                //List<Wood> woods = JsonConvert.DeserializeObject<List<Wood>>(getresult["result"].ToString());
+                return true;
+            }
+            //string param = WoodWorksAPI.formatRequest<Wood>("getWood",null);
+            return false;
+
             //string param = WoodWorksAPI.formatRequest<Wood>("getWood",null);
             //return null;
         }
 
-        public async static void addWoods()
+        public async static Task<Boolean> deleteWoods(Wood wood)
         {
-            Wood wood = new Wood();
+            /*Wood wood = new Wood();
             wood.wood_type = "corn";
             wood.wood_length = 10;
             wood.wood_width = 5.5f;
             wood.Wood_height = 20.1f;
-            wood.wood_price = 500;
-            string result = await WoodWorksAPI.runRequest<Wood>("getWood", null, null);
+            wood.wood_price = 500;*/
+            string result = await WoodWorksAPI.runRequest<Wood>("deleteWood", Config.user.user_key, wood);
             Console.WriteLine(result);
+            JObject deleteresult = JObject.Parse(result);
+            if (deleteresult["error"] == null)
+            {
+                //List<Wood> woods = JsonConvert.DeserializeObject<List<Wood>>(getresult["result"].ToString());
+                return true;
+            }
             //string param = WoodWorksAPI.formatRequest<Wood>("getWood",null);
-            //return null;
-        }
-
-        public async static void editWoods()
-        {
-            Wood wood = new Wood();
-            wood.wood_type = "corn";
-            wood.wood_length = 10;
-            wood.wood_width = 5.5f;
-            wood.Wood_height = 20.1f;
-            wood.wood_price = 500;
-            string result = await WoodWorksAPI.runRequest<Wood>("getWood", null, null);
-            Console.WriteLine(result);
-            //string param = WoodWorksAPI.formatRequest<Wood>("getWood",null);
-            //return null;
-        }
-
-        public async static void deleteWoods()
-        {
-            Wood wood = new Wood();
-            wood.wood_type = "corn";
-            wood.wood_length = 10;
-            wood.wood_width = 5.5f;
-            wood.Wood_height = 20.1f;
-            wood.wood_price = 500;
-            string result = await WoodWorksAPI.runRequest<Wood>("getWood", null, null);
-            Console.WriteLine(result);
+            return false;
             //string param = WoodWorksAPI.formatRequest<Wood>("getWood",null);
             //return null;
         }

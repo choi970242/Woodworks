@@ -1,41 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Woodworks.Models;
+using System.Diagnostics;
 
 namespace Woodworks
 {
-    public partial class Main : Form
+    public partial class Inventory : UserControl
     {
-        public Main()
+        List<Wood> woodlist;
+
+        public Inventory()
         {
             InitializeComponent();
-            Test2();
         }
 
-        public void Test2()
+        public async void init()
         {
-            Inventory inven = new Inventory();
-            TabPage inventory = new TabPage("Inventory");
-            inventory.Controls.Add(inven);
-            mainTabCntrl.TabPages.Add(inventory);
+            woodlist = await Wood.getWoods();
+            woodDGV.DataSource = woodlist;
         }
-        
-        private void FormsClosed(object sender, FormClosedEventArgs e)
-        {
-            //this.Enabled = true;
-        }
-        private void newWoodBtn_Click(object sender, EventArgs e)
+
+        private void addWoodBtn_Click(object sender, EventArgs e)
         {
             WoodView view = new WoodView();
             showView(view);
-            
         }
 
         private void editWoodBtn_Click(object sender, EventArgs e)
@@ -49,22 +44,28 @@ namespace Woodworks
             wood.wood_uom = "M";
             wood.wood_price = 40;
             wood.wood_qty = 0;
-           
+            
             WoodView view = new WoodView(wood);
             showView(view);
         }
 
-        public void showView(Form view){
+        public void showView(Form view)
+        {
             view.FormClosed += new FormClosedEventHandler(FormsClosed);
             //this.Enabled = false;
             view.ShowDialog();
         }
 
-        private void uomBtn_Click(object sender, EventArgs e)
+        private void FormsClosed(object sender, FormClosedEventArgs e)
         {
-            UomView view = new UomView();
-            showView(view);
+            //this.Enabled = true;
         }
 
+        private void Inventory_Load(object sender, EventArgs e)
+        {
+            init();
+            this.Dock = DockStyle.Fill;
+            Console.WriteLine("hello world");
+        }
     }
 }
