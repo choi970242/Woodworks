@@ -21,7 +21,7 @@ namespace Woodworks
 
         public void Test2()
         {
-            Inventory inven = new Inventory();
+            InventoryManagement inven = new InventoryManagement();
             TabPage inventory = new TabPage("Inventory");
             inventory.Controls.Add(inven);
             mainTabCntrl.TabPages.Add(inventory);

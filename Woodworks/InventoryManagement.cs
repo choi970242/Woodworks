@@ -12,11 +12,11 @@ using System.Diagnostics;
 
 namespace Woodworks
 {
-    public partial class Inventory : UserControl
+    public partial class InventoryManagement : UserControl
     {
         List<Wood> woodlist;
 
-        public Inventory()
+        public InventoryManagement()
         {
             InitializeComponent();
         }
@@ -65,7 +65,11 @@ namespace Woodworks
         {
             init();
             this.Dock = DockStyle.Fill;
-            Console.WriteLine("hello world");
+        }
+
+        private void dltWoodBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

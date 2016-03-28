@@ -39,14 +39,14 @@
             this.mainTabCntrl.Location = new System.Drawing.Point(4, 3);
             this.mainTabCntrl.Name = "mainTabCntrl";
             this.mainTabCntrl.SelectedIndex = 0;
-            this.mainTabCntrl.Size = new System.Drawing.Size(999, 592);
+            this.mainTabCntrl.Size = new System.Drawing.Size(999, 582);
             this.mainTabCntrl.TabIndex = 0;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 598);
+            this.ClientSize = new System.Drawing.Size(1006, 597);
             this.Controls.Add(this.mainTabCntrl);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

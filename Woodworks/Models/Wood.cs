@@ -20,6 +20,7 @@ namespace Woodworks.Models
         private double Wood_price;
         private int Wood_qty;
 
+        [System.ComponentModel.DisplayName("ID")]
         public long wood_id
         {
             get
@@ -33,6 +34,7 @@ namespace Woodworks.Models
             }
         }
 
+        [System.ComponentModel.DisplayName("Type")]
         public string wood_type
         {
             get
@@ -46,6 +48,7 @@ namespace Woodworks.Models
             }
         }
 
+        [System.ComponentModel.DisplayName("Length")]
         public double wood_length
         {
             get
@@ -59,6 +62,7 @@ namespace Woodworks.Models
             }
         }
 
+        [System.ComponentModel.DisplayName("Width")]
         public double wood_width
         {
             get
@@ -72,6 +76,7 @@ namespace Woodworks.Models
             }
         }
 
+        [System.ComponentModel.DisplayName("Height")]
         public double wood_height
         {
             get
@@ -85,6 +90,7 @@ namespace Woodworks.Models
             }
         }
 
+        [System.ComponentModel.DisplayName("Unit of Measure")]
         public String wood_uom
         {
             get
@@ -98,6 +104,7 @@ namespace Woodworks.Models
             }
         }
 
+        [System.ComponentModel.DisplayName("Price")]
         public double wood_price
         {
             get
@@ -111,6 +118,7 @@ namespace Woodworks.Models
             }
         }
 
+        [System.ComponentModel.DisplayName("QTY")]
         public int wood_qty
         {
             get

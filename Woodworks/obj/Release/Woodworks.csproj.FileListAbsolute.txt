@@ -22,5 +22,8 @@ C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\obj\R
 C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\obj\Release\Woodworks.WoodView.resources
 C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\obj\Release\Woodworks.csproj.GenerateResource.Cache
 C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Release\Woodworks.CustomerView.resources
-C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Release\Woodworks.Inventory.resources
 C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Release\Woodworks.UomView.resources
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Release\Woodworks.csprojResolveAssemblyReference.cache
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Release\Woodworks.CustomerManagement.resources
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Release\Woodworks.InventoryManagement.resources
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Release\Woodworks.Admin.resources
