@@ -44,6 +44,7 @@
             this.prdctSrchLbl = new System.Windows.Forms.Label();
             this.dscntPrceLbl = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dltBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.woodPrceTxtBx = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.woodWidthTxtBx = new System.Windows.Forms.TextBox();
             this.woodThcknessTxtBx = new System.Windows.Forms.TextBox();
             this.woodTypeTxtBx = new System.Windows.Forms.TextBox();
-            this.dltBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.specialPriceDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productLstDGV)).BeginInit();
             this.customerGrpBx.SuspendLayout();
@@ -83,6 +83,7 @@
             // 
             this.productLstDGV.AllowUserToAddRows = false;
             this.productLstDGV.AllowUserToDeleteRows = false;
+            this.productLstDGV.AllowUserToResizeRows = false;
             this.productLstDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.productLstDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productLstDGV.Location = new System.Drawing.Point(12, 219);
@@ -235,6 +236,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wood Information :";
             // 
+            // dltBtn
+            // 
+            this.dltBtn.Location = new System.Drawing.Point(509, 37);
+            this.dltBtn.Name = "dltBtn";
+            this.dltBtn.Size = new System.Drawing.Size(75, 26);
+            this.dltBtn.TabIndex = 11;
+            this.dltBtn.Text = "Delete";
+            this.dltBtn.UseVisualStyleBackColor = true;
+            this.dltBtn.Click += new System.EventHandler(this.dltBtn_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -246,11 +257,11 @@
             // 
             // woodPrceTxtBx
             // 
-            this.woodPrceTxtBx.Enabled = false;
             this.woodPrceTxtBx.Location = new System.Drawing.Point(426, 41);
             this.woodPrceTxtBx.Name = "woodPrceTxtBx";
             this.woodPrceTxtBx.Size = new System.Drawing.Size(64, 20);
             this.woodPrceTxtBx.TabIndex = 9;
+            this.woodPrceTxtBx.Text = "0";
             // 
             // label4
             // 
@@ -329,16 +340,6 @@
             this.woodTypeTxtBx.Name = "woodTypeTxtBx";
             this.woodTypeTxtBx.Size = new System.Drawing.Size(125, 20);
             this.woodTypeTxtBx.TabIndex = 0;
-            // 
-            // dltBtn
-            // 
-            this.dltBtn.Location = new System.Drawing.Point(509, 37);
-            this.dltBtn.Name = "dltBtn";
-            this.dltBtn.Size = new System.Drawing.Size(75, 26);
-            this.dltBtn.TabIndex = 11;
-            this.dltBtn.Text = "Delete";
-            this.dltBtn.UseVisualStyleBackColor = true;
-            this.dltBtn.Click += new System.EventHandler(this.dltBtn_Click);
             // 
             // SpecialPriceView
             // 

@@ -237,5 +237,18 @@ namespace Woodworks.Models
             //return null;
         }
 
+        public async static Task<List<Wood>> getSpecialPrices(Customer customer)
+        {
+            string result = await WoodWorksAPI.runRequest<Customer>("getSpecialPrice", Config.user.user_key, customer);
+            Console.WriteLine(result);
+            JObject getresult = JObject.Parse(result);
+            if (getresult["error"] == null)
+            {
+                List<Wood> woods = JsonConvert.DeserializeObject<List<Wood>>(getresult["result"].ToString());
+                return woods;
+            }
+            //string param = WoodWorksAPI.formatRequest<Wood>("getWood",null);
+            return null;
+        }
     }
 }

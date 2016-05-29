@@ -30,7 +30,7 @@ namespace Woodworks
 
         private async void init()
         {
-            prices = new List<Wood>();
+            prices = await Wood.getSpecialPrices(customer);
             woods = await Wood.getWoods(null);
             cmpnyNameTxtBx.Text = customer.company_name;
             cmpnyAddrssTxtBx.Text = customer.company_address;
@@ -44,9 +44,9 @@ namespace Woodworks
 
         private void cnfrmBtn_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(prices.Count);
             if (!prices.Contains(selectedWood))
             {
+                selectedWood.wood_price = float.Parse(woodPrceTxtBx.Text);
                 prices.Add(selectedWood);
                 pricesview.Refresh();
             }
@@ -65,20 +65,24 @@ namespace Woodworks
             woodThcknessTxtBx.Text = wood.wood_thickness.ToString();
             woodWidthTxtBx.Text = wood.wood_width.ToString();
             woodLengthTxtBx.Text = wood.wood_length.ToString();
+            woodPrceTxtBx.Text = wood.wood_price.ToString();
         }
 
         private void selectedDGV_SelectionChanged(object sender, EventArgs e)
         {
-            string sendername = ((DataGridView)sender).Name;
-            if (sendername.Equals(productLstDGV.Name))
+            if (((DataGridView)sender).CurrentCell != null)
             {
-                selectedWood = woods.ElementAt<Wood>(((DataGridView)sender).CurrentCell.RowIndex);
-                SetWoodInfo(selectedWood);
-            }
-            else
-            {
-                selectedWood = prices.ElementAt<Wood>(((DataGridView)sender).CurrentCell.RowIndex);
-                SetWoodInfo(selectedWood);
+                string sendername = ((DataGridView)sender).Name;
+                if (sendername.Equals(productLstDGV.Name))
+                {
+                    selectedWood = woods.ElementAt<Wood>(((DataGridView)sender).CurrentCell.RowIndex);
+                    SetWoodInfo(selectedWood);
+                }
+                else
+                {
+                    selectedWood = prices.ElementAt<Wood>(((DataGridView)sender).CurrentCell.RowIndex);
+                    SetWoodInfo(selectedWood);
+                }
             }
         }
 
