@@ -14,7 +14,7 @@ namespace Woodworks
 {
     public partial class InventoryManagement : UserControl
     {
-        List<Wood> woodlist;
+        List<Wood> woods;
 
         public InventoryManagement()
         {
@@ -23,8 +23,8 @@ namespace Woodworks
 
         public async void init()
         {
-            woodlist = await Wood.getWoods();
-            woodDGV.DataSource = woodlist;
+            woods = await Wood.getWoods(null);
+            woodDGV.DataSource = woods;
         }
 
         private void addWoodBtn_Click(object sender, EventArgs e)
@@ -35,16 +35,7 @@ namespace Woodworks
 
         private void editWoodBtn_Click(object sender, EventArgs e)
         {
-            Wood wood = new Wood();
-            wood.wood_id = 17;
-            wood.wood_type = "SUPERWOOD";
-            wood.wood_length = 51121;
-            wood.wood_width = 21651;
-            wood.wood_height = 1;
-            wood.wood_uom = "M";
-            wood.wood_price = 40;
-            wood.wood_qty = 0;
-            
+            Wood wood = woods.ElementAt<Wood>(woodDGV.CurrentCell.RowIndex);
             WoodView view = new WoodView(wood);
             showView(view);
         }

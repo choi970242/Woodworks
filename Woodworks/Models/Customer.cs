@@ -16,7 +16,9 @@ namespace Woodworks.Models
         private String Company_address;
         private String Contact_person;
         private String Contact_number;
+        private List<Wood> Customer_specialprices;
 
+        [System.ComponentModel.DisplayName("ID")]
         public long customer_id
         {
             get
@@ -30,6 +32,7 @@ namespace Woodworks.Models
             }
         }
 
+        [System.ComponentModel.DisplayName("Name")]
         public String company_name
         {
             get
@@ -43,6 +46,7 @@ namespace Woodworks.Models
             }
         }
 
+        [System.ComponentModel.DisplayName("Address")]
         public String company_address
         {
             get
@@ -56,6 +60,7 @@ namespace Woodworks.Models
             }
         }
 
+        [System.ComponentModel.DisplayName("Contact Person")]
         public String contact_person
         {
             get
@@ -69,6 +74,7 @@ namespace Woodworks.Models
             }
         }
 
+        [System.ComponentModel.DisplayName("Contact Number")]
         public String contact_number
         {
             get
@@ -79,6 +85,19 @@ namespace Woodworks.Models
             set
             {
                 Contact_number = value;
+            }
+        }
+
+        public List<Wood> customer_specialprices
+        {
+            get
+            {
+                return Customer_specialprices;
+            }
+
+            set
+            {
+                Customer_specialprices = value;
             }
         }
 
@@ -102,11 +121,14 @@ namespace Woodworks.Models
         {
             return (contact_number != null);
         }
+        public bool ShouldSerializecustomer_specialprices()
+        {
+            return (customer_specialprices != null);
+        }
 
         public async static Task<List<Customer>> getCustomers()
         {
             string result = await WoodWorksAPI.runRequest<Wood>("getCustomer", Config.user.user_key, null);
-            Console.WriteLine(result);
             JObject getresult = JObject.Parse(result);
             if (getresult["error"] == null)
             {
@@ -122,12 +144,10 @@ namespace Woodworks.Models
             string result = await WoodWorksAPI.runRequest<T>("addCustomer", Config.user.user_key, customer);
             Console.WriteLine(result);
             JObject getresult = JObject.Parse(result);
-            if (getresult["error"] == null)
+            if (getresult["error"].ToString() == "")
             {
-                //List<Customer> woods = JsonConvert.DeserializeObject<List<Customer>>(getresult["result"].ToString());
                 return true;
             }
-            //string param = WoodWorksAPI.formatRequest<Wood>("getWood",null);
             return false;
         }
 
@@ -136,12 +156,10 @@ namespace Woodworks.Models
             string result = await WoodWorksAPI.runRequest<Customer>("editCustomer", Config.user.user_key, customer);
             Console.WriteLine(result);
             JObject editresult = JObject.Parse(result);
-            if (editresult["error"] == null)
+            if (editresult["error"].ToString() == "")
             {
-                //List<Wood> woods = JsonConvert.DeserializeObject<List<Wood>>(getresult["result"].ToString());
                 return true;
             }
-            //string param = CustomerWorksAPI.formatRequest<Wood>("getWood",null);
             return false;
 
             //string param = WoodWorksAPI.formatRequest<Wood>("getWood",null);
@@ -157,9 +175,23 @@ namespace Woodworks.Models
             wood.Wood_height = 20.1f;
             wood.wood_price = 500;*/
             string result = await WoodWorksAPI.runRequest<Customer>("deleteCustomer", Config.user.user_key, customer);
-            Console.WriteLine(result);
             JObject deleteresult = JObject.Parse(result);
             if (deleteresult["error"] == null)
+            {
+                //List<Wood> woods = JsonConvert.DeserializeObject<List<Wood>>(getresult["result"].ToString());
+                return true;
+            }
+            //string param = WoodWorksAPI.formatRequest<Wood>("getWood",null);
+            return false;
+            //string param = WoodWorksAPI.formatRequest<Wood>("getWood",null);
+            //return null;
+        }
+
+        public async static Task<Boolean> addSpecialPrices(Customer customer)
+        {
+            string result = await WoodWorksAPI.runRequest<Customer>("addSpecialPrice", Config.user.user_key, customer);
+            JObject addresult = JObject.Parse(result);
+            if (addresult["error"] == null)
             {
                 //List<Wood> woods = JsonConvert.DeserializeObject<List<Wood>>(getresult["result"].ToString());
                 return true;

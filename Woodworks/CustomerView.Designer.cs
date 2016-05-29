@@ -111,9 +111,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(112, 13);
             this.label1.TabIndex = 8;
-            this.label1.Text = "label1";
+            this.label1.Text = "Customer Information :";
             // 
             // cnfrmBtn
             // 
@@ -121,8 +121,8 @@
             this.cnfrmBtn.Name = "cnfrmBtn";
             this.cnfrmBtn.Size = new System.Drawing.Size(75, 23);
             this.cnfrmBtn.TabIndex = 9;
-            this.cnfrmBtn.Text = "button1";
             this.cnfrmBtn.UseVisualStyleBackColor = true;
+            this.cnfrmBtn.Click += new System.EventHandler(this.cnfrmBtn_Click);
             // 
             // cnclBtn
             // 
@@ -130,8 +130,9 @@
             this.cnclBtn.Name = "cnclBtn";
             this.cnclBtn.Size = new System.Drawing.Size(75, 23);
             this.cnclBtn.TabIndex = 10;
-            this.cnclBtn.Text = "button2";
+            this.cnclBtn.Text = "Cancel";
             this.cnclBtn.UseVisualStyleBackColor = true;
+            this.cnclBtn.Click += new System.EventHandler(this.cnclBtn_Click);
             // 
             // CustomerView
             // 

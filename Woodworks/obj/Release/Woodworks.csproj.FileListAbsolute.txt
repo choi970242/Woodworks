@@ -27,3 +27,4 @@ C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\R
 C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Release\Woodworks.CustomerManagement.resources
 C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Release\Woodworks.InventoryManagement.resources
 C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Release\Woodworks.Admin.resources
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Release\Woodworks.TransactionManagement.resources

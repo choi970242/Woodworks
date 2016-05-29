@@ -34,7 +34,7 @@ namespace Woodworks
             }
             else
             {
-                MessageBox.Show("Failure", "fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Login Failed!", "Incorrect username or password. Please try again!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             //Console.WriteLine(Config.user.user_key);

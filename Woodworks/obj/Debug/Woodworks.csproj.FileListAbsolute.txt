@@ -22,7 +22,12 @@ C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\bin\D
 C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.Main.resources
 C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.WoodView.resources
-C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.UomView.resources
 C:\Users\Aldrich\Documents\Visual Studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.CustomerView.resources
-C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.Inventory.resources
 C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.csprojResolveAssemblyReference.cache
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.Admin.resources
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.CustomerManagement.resources
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.InventoryManagement.resources
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.TransactionManagement.resources
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\bin\Debug\Equin.ApplicationFramework.BindingListView.dll
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\bin\Debug\Equin.ApplicationFramework.BindingListView.pdb
+C:\Users\Aldrich\documents\visual studio 2013\Projects\Woodworks\Woodworks\obj\Debug\Woodworks.SpecialPriceView.resources

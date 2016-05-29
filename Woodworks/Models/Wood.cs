@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Woodworks.Network;
 
 namespace Woodworks.Models
@@ -13,10 +14,9 @@ namespace Woodworks.Models
     {
         private long Wood_id;
         private String Wood_type;
-        private double Wood_length;
+        private double Wood_thickness;
         private double Wood_width;
-        private double Wood_height;
-        private String Wood_uom;
+        private double Wood_length;
         private double Wood_price;
         private int Wood_qty;
 
@@ -48,17 +48,17 @@ namespace Woodworks.Models
             }
         }
 
-        [System.ComponentModel.DisplayName("Length")]
-        public double wood_length
+        [System.ComponentModel.DisplayName("Thickness")]
+        public double wood_thickness
         {
             get
             {
-                return Wood_length;
+                return Wood_thickness;
             }
 
             set
             {
-                Wood_length = value;
+                Wood_thickness = value;
             }
         }
 
@@ -76,31 +76,17 @@ namespace Woodworks.Models
             }
         }
 
-        [System.ComponentModel.DisplayName("Height")]
-        public double wood_height
+        [System.ComponentModel.DisplayName("Length")]
+        public double wood_length
         {
             get
             {
-                return Wood_height;
+                return Wood_length;
             }
 
             set
             {
-                Wood_height = value;
-            }
-        }
-
-        [System.ComponentModel.DisplayName("Unit of Measure")]
-        public String wood_uom
-        {
-            get
-            {
-                return Wood_uom;
-            }
-
-            set
-            {
-                Wood_uom = value;
+                Wood_length = value;
             }
         }
 
@@ -132,6 +118,23 @@ namespace Woodworks.Models
             }
         }
 
+        public string full_name
+        {
+            get
+            {
+                return wood_type + " T" + wood_thickness + " W" + wood_width + " L" + wood_length;
+            } 
+        }
+
+        [System.ComponentModel.DisplayName("Total Price")]
+        public double total_price
+        {
+            get
+            {
+                return wood_qty * wood_price;
+            }
+        }
+
         public bool ShouldSerializewood_id()
         {
             return (wood_id != 0);
@@ -152,14 +155,9 @@ namespace Woodworks.Models
             return (wood_width != 0.0);
         }
 
-        public bool ShouldSerializewood_height()
+        public bool ShouldSerializewood_thickness()
         {
-            return (wood_height != 0.0);
-        }
-
-        public bool ShouldSerializewood_uom()
-        {
-            return (wood_uom != null);
+            return (wood_thickness != 0.0);
         }
 
         public bool ShouldSerializewood_price()
@@ -172,9 +170,9 @@ namespace Woodworks.Models
             return (wood_qty != 0);
         }
 
-        public async static Task<List<Wood>> getWoods()
+        public async static Task<List<Wood>> getWoods(Customer customer)
         {
-            string result = await WoodWorksAPI.runRequest<Wood>("getWood", Config.user.user_key,null);
+            string result = await WoodWorksAPI.runRequest<Customer>("getWood", Config.user.user_key, customer);
             Console.WriteLine(result);
             JObject getresult = JObject.Parse(result);
             if (getresult["error"] == null)

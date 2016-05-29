@@ -42,6 +42,7 @@ namespace Woodworks
             // 
             this.woodDGV.AllowUserToAddRows = false;
             this.woodDGV.AllowUserToDeleteRows = false;
+            this.woodDGV.AllowUserToResizeRows = false;
             this.woodDGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -51,6 +52,7 @@ namespace Woodworks
             this.woodDGV.MultiSelect = false;
             this.woodDGV.Name = "woodDGV";
             this.woodDGV.ReadOnly = true;
+            this.woodDGV.RowHeadersVisible = false;
             this.woodDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.woodDGV.Size = new System.Drawing.Size(643, 380);
             this.woodDGV.TabIndex = 0;

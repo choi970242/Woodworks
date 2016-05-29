@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -12,7 +13,7 @@ namespace Woodworks.Network
 {
     class WoodWorksAPI
     {
-        private static string url = "http://api.local/rpc/";
+        private static string url = ConfigurationManager.AppSettings["local"];
 
         public async static Task<string> runRequest<T>(string method, string user_key, T param)
         {

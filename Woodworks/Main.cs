@@ -13,58 +13,38 @@ namespace Woodworks
 {
     public partial class Main : Form
     {
+        List<Customer> customers;
+        List<Wood> woods;
+
         public Main()
         {
             InitializeComponent();
-            Test2();
+            init();
         }
 
-        public void Test2()
+        public async void init()
         {
+            customers = await Customer.getCustomers();
+            //woods = await Wood.getWoods(0);
+            TransactionManagement trans = new TransactionManagement(customers);
+            TabPage transaction = new TabPage("Order");
+            transaction.Controls.Add(trans);
+            mainTabCntrl.TabPages.Add(transaction);
             InventoryManagement inven = new InventoryManagement();
             TabPage inventory = new TabPage("Inventory");
             inventory.Controls.Add(inven);
             mainTabCntrl.TabPages.Add(inventory);
+            CustomerManagement custom = new CustomerManagement(customers);
+            TabPage cust = new TabPage("Customers");
+            cust.Controls.Add(custom);
+            mainTabCntrl.TabPages.Add(cust);
         }
         
         private void FormsClosed(object sender, FormClosedEventArgs e)
         {
             //this.Enabled = true;
         }
-        private void newWoodBtn_Click(object sender, EventArgs e)
-        {
-            WoodView view = new WoodView();
-            showView(view);
-            
-        }
-
-        private void editWoodBtn_Click(object sender, EventArgs e)
-        {
-            Wood wood = new Wood();
-            wood.wood_id = 17;
-            wood.wood_type = "SUPERWOOD";
-            wood.wood_length = 51121;
-            wood.wood_width = 21651;
-            wood.wood_height = 1;
-            wood.wood_uom = "M";
-            wood.wood_price = 40;
-            wood.wood_qty = 0;
-           
-            WoodView view = new WoodView(wood);
-            showView(view);
-        }
-
-        public void showView(Form view){
-            view.FormClosed += new FormClosedEventHandler(FormsClosed);
-            //this.Enabled = false;
-            view.ShowDialog();
-        }
-
-        private void uomBtn_Click(object sender, EventArgs e)
-        {
-            UomView view = new UomView();
-            showView(view);
-        }
+       
 
     }
 }
