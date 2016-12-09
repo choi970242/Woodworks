@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="Models\Config.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Rule.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\UOM.cs" />
     <Compile Include="Models\User.cs" />
@@ -95,6 +96,12 @@
     <Compile Include="Network\WoodWorksAPI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RuleManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RuleManagement.Designer.cs">
+      <DependentUpon>RuleManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="SpecialPriceView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +150,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RuleManagement.resx">
+      <DependentUpon>RuleManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SpecialPriceView.resx">
       <DependentUpon>SpecialPriceView.cs</DependentUpon>
     </EmbeddedResource>
